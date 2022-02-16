@@ -1,0 +1,10 @@
+/* Sidemenu CSS */
+div.side-menu {
+  background-color: black;
+  width: 20vh;
+  height: 100vh;
+}
+
+div.side-menu > ul li:first-child {
+  padding-top: 10vh;
+}
