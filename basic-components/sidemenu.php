@@ -1,10 +1,11 @@
 <div class="side-menu">
   <ul>
     <li></li>
-    <li><a href="#">a</a></li>
-    <li><a href="#">b</a></li>
-    <li><a href="#">c</a></li>
-    <li><a href="#">d</a></li>
-    <li><a href="#">e</a></li>
+    <li><a href="#">Login/Register</a></li>
+    <li><a href="#">Artikelen</a></li>
+    <li><a href="#">Get in touch</a></li>
+    <li><a href="#">About us</a></li>
+    <li><a href="#">x</a></li>
+    <span class="copyright">Copyright &copy; 2022</span>
   </ul>
 </div>
