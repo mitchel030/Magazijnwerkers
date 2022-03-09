@@ -16,8 +16,8 @@
     <body>
       <h1>'. $array["date"] . ' - ' . $array["time"] .'</h1>
       <h2>Beste Gebruiker,</h2>
-      <p>U heeft zich onlangs geregistreerd voor de site http://www.restaurant-george-b.nl</p>
-      <p>Klik <a href="http://georgemarina/index.php?content=' . $activationpage . '&email=' . $email . '&pwh=' . $array["password_hash"] . '">hier</a> voor het activeren en wijzigen van het wachtwoord van uw account</p>
+      <p>U heeft zich onlangs geregistreerd voor de site http://magazijnwerkers</p>
+      <p>Klik <a href="http://magazijnwerkers/index.php?content=' . $activationpage . '&email=' . $email . '&pwh=' . $array["password_hash"] . '">hier</a> voor het activeren en wijzigen van het wachtwoord van uw account</p>
       <p>Bedankt voor het registreren</p>
       <p>Met vriendelijke groet,</p>
       <p>A. de Ruijter</p>
