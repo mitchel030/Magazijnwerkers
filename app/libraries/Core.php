@@ -43,6 +43,7 @@ class Core
       $url = filter_var($url, FILTER_SANITIZE_URL);
       //Split url into an array
       $url = explode('/', $url);
+      var_dump($url);
       return $url;
     } else {
       return array('Pages', 'index');

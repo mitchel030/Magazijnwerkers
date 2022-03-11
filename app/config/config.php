@@ -9,7 +9,7 @@ define('DB_NAME', 'magazine'); //Add your DB Name
 define('APPROOT', dirname(dirname(__FILE__)));
 
 //URLROOT (Dynamic links)
-define('URLROOT', 'project-magazijn.nl');
+define('URLROOT', 'http://project-magazijn.nl');
 
 //Sitename
 define('SITENAME', 'Project Magazijn');
