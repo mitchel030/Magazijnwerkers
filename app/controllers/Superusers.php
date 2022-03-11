@@ -11,8 +11,23 @@ class Superusers extends Controller
     $this->view('superusers/index');
   }
 
-  public function about()
+  public function order()
   {
-    $this->view('superusers/about');
+    $this->view('superusers/order');
+  }
+
+  public function approve()
+  {
+    $this->view('superusers/approve');
+  }
+
+  public function request()
+  {
+    $this->view('superusers/request');
+  }
+
+  public function assortment()
+  {
+    $this->view('superusers/assortment');
   }
 }
