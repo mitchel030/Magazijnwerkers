@@ -6,33 +6,13 @@ class Superusers extends Controller
     $this->userModel = $this->model('Superuser');
   }
 
-  // Index view controller
   public function index()
   {
-    $this->view('superuser/index');
+    $this->view('superusers/index');
   }
 
-  // Order view controller
-  public function order()
+  public function about()
   {
-    $this->view('superuser/order');
-  }
-
-  // approve/refuse view controller
-  public function approve()
-  {
-    $this->view('superuser/approve');
-  }
-
-  // request view controller
-  public function request()
-  {
-    $this->view('superuser/request');
-  }
-
-  // Magazine view controller
-  public function assortment()
-  {
-    $this->view('assortment');
+    $this->view('superusers/about');
   }
 }

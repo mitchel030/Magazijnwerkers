@@ -10,7 +10,7 @@ class Superuser
 
   public function getSuperusers()
   {
-    $this->db->query("SELECT * FROM users");
+    $this->db->query("SELECT * FROM `role`");
 
     $result = $this->db->resultSet();
 
