@@ -44,6 +44,8 @@ class Core
       //Split url into an array
       $url = explode('/', $url);
       return $url;
+    } else {
+      return array('Pages', 'index');
     }
   }
 }
