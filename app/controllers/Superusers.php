@@ -30,4 +30,9 @@ class Superusers extends Controller
   {
     $this->view('superusers/assortment');
   }
+
+  public function profile()
+  {
+    $this->view('superusers/profile');
+  }
 }
