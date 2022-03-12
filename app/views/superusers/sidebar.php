@@ -17,11 +17,6 @@
   <div class="menu-bar">
     <div class="menu">
 
-      <li class="search-box">
-        <i class='bx bx-search icon'></i>
-        <input type="text" placeholder="Search...">
-      </li>
-
       <ul class="menu-links">
         <li class="nav-link">
           <a href="#">
@@ -92,10 +87,6 @@
   </div>
 
 </nav>
-
-<section class="home">
-  <div class="text">Dashboard Sidebar</div>
-</section>
 
 <script>
   const body = document.querySelector('body'),

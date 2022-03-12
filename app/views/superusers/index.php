@@ -7,7 +7,9 @@ require_once APPROOT . '\views\superusers\sidebar.php';
 
 ?>
 
-<h1>Index superuser</h1>
+<section class="home">
+  <div class="text">Index Superusers</div>
+</section>
 
 <?php
 // Require end include
