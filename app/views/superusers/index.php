@@ -8,23 +8,14 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="~\public\css\style.css">
   <title>Magazijn - MBO Utrecht</title>
 </head>
 
 <body>
-  <!-- Side menu -->
-  <div class="side-menu">
-    <ul>
-      <li></li>
-      <li><a href="#">Login/Register</a></li>
-      <li><a href="superuser/index">Super User</a></li>
-      <li><a href="#">Get in touch</a></li>
-      <li><a href="#">About us</a></li>
-      <li><a href="#">--------</a></li>
-      <span class="copyright">Copyright &copy; 2022</span>
-    </ul>
-  </div>
+  <!-- Require sidebar from superusers view -->
+  <?php require_once APPROOT . '\views\superusers\sidebar.php'; ?>
+
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -38,9 +29,4 @@
 </body>
 
 </html>
-
-<?php
-var_dump(PROJECTROOT);
-// require_once APPROOT . '\views\superusers\sidebar.php';
-?>
 <!-- <h1>Index superuser</h1> -->

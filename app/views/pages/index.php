@@ -18,7 +18,7 @@
     <ul>
       <li></li>
       <li><a href="#">Login/Register</a></li>
-      <li><a href="superuser/index">Super User</a></li>
+      <li><a href="superusers/index">Super User</a></li>
       <li><a href="#">Get in touch</a></li>
       <li><a href="#">About us</a></li>
       <li><a href="#">--------</a></li>
