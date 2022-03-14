@@ -1,17 +1,18 @@
-<?php
-// Require head include
-require_once APPROOT . '\views\includes\head.php';
+<!-- // Require head include -->
+<?= require_once APPROOT . '\views\includes\head.php'; ?>
 
-// Require sidebar from superusers view
-require_once APPROOT . '\views\superusers\sidebar.php';
+<div class="div.container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <!-- Sidebar -->
+      <?= require_once APPROOT . '\views\superusers\sidebar.php'; ?>
+    </div>
+    <!-- Page Content -->
+    <div class="content col-9">
+      <h1>Index Content</h1>
+    </div>
+  </div>
+</div>
 
-?>
-
-<section class="home">
-  <div class="text">Index Superusers</div>
-</section>
-
-<?php
-// Require end include
-require_once APPROOT . '\views\includes\end.php';
-?>
+<!-- // Require end include -->
+<?= require_once APPROOT . '\views\includes\end.php'; ?>
