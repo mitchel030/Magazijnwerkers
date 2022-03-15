@@ -23,7 +23,9 @@
       margin-top: 100px;
       margin-right: 100px;
     }
-    
+    #button {
+      background-color: #2DB4ED;
+    }
   </style>
   <title>MBOUTRECHT</title>
 </head>
@@ -62,7 +64,7 @@
       </div>
      
       <div class="col-12">
-        <button type="submit" class="btn btn-success btn-lg btn-block">Activeer</button>
+        <button id="button" type="submit" class="btn btn-success btn-lg btn-block">Activeer</button>
         
       </div>
     </div>
