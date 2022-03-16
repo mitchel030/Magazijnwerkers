@@ -7,6 +7,7 @@
     <li><a href="<?= URLROOT ?>/superusers/request">Request Articles</a></li>
     <li><a href="<?= URLROOT ?>/superusers/assortment">View Assortment</a></li>
     <li><a href="<?= URLROOT ?>/superusers/profile">Profile</a></li>
+    <li><a href="<?= URLROOT ?>/pages/index">Back to Menu</a></li>
     <span class="copyright">Copyright &copy; 2022</span>
   </ul>
 </div>
