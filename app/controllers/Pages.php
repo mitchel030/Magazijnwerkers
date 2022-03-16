@@ -21,4 +21,19 @@ class Pages extends Controller
   {
     $this->view('pages/about');
   }
+
+  public function login()
+  {
+    $this->view('pages/login');
+  }
+
+  public function overview()
+  {
+    $this->view('pages/overview');
+  }
+
+  public function contact()
+  {
+    $this->view('pages/contact');
+  }
 }
