@@ -16,6 +16,7 @@ require_once APPROOT . '\views\includes\head.php';
       <div class="container mt-5">
         <div class="row">
           <div class="col-12 col-sm-6" style="border-right: solid black 1px">
+            <h1 class="text-center">Login</h1>
             <form action="./index.php?content=login_script" method="post">
               <div class="form-group">
                 <label for="inputEmail">E-mail</label>

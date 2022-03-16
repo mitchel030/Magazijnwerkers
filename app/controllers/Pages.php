@@ -26,4 +26,9 @@ class Pages extends Controller
   {
     $this->view('pages/login');
   }
+
+  public function overview()
+  {
+    $this->view('pages/overview');
+  }
 }
