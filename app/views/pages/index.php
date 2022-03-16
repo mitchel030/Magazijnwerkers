@@ -15,6 +15,19 @@ session_start();
   <link rel="stylesheet" href="./css/style.css">
   <title>Magazijn - MBO Utrecht</title>
 </head>
+<body>
+  <!-- Side menu -->
+  <div class="side-menu">
+    <ul>
+      <li></li>
+      <li><a href="#">Login/Register</a></li>
+      <li><a href="<?= URLROOT ?>/superusers/index">Super User</a></li>
+      <li><a href="#">Get in touch</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">--------</a></li>
+      <span class="copyright">Copyright &copy; 2022</span>
+    </ul>
+  </div>
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
