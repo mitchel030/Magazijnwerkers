@@ -9,7 +9,7 @@
     </div>
     <!-- Page Content -->
     <div class="content col-10">
-      <h1 class="text-center">About Page</h1>
+      <h1 class="text-center">Contact Page</h1>
     </div>
   </div>
 </div>

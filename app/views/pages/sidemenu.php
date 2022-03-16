@@ -5,8 +5,8 @@
     <li><a href="<?= URLROOT ?>/pages/login">Login/Register</a></li>
     <li><a href="<?= URLROOT ?>/superusers/index">Super User</a></li>
     <li><a href="<?= URLROOT ?>/pages/overview">Overview Articles</a></li>
-    <li><a href="#">--</a></li>
-    <li><a href="#">--</a></li>
+    <li><a href="<?= URLROOT ?>/pages/about">About Us</a></li>
+    <li><a href="<?= URLROOT ?>/pages/contact">Contact us</a></li>
     <span class="copyright">Copyright &copy; 2022</span>
   </ul>
 </div>
