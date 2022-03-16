@@ -280,9 +280,9 @@ html {
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login"  placeholder="password">
+    <form action="./index.php?content=login_script" method="post">
+      <input name="email" type="email" class="fadeIn second" id="inputEmail" aria-describedby="emailHelp" autofocus>
+      <input name="password" type="password" class="fadeIn third" id="inputPassword" aria-describedby="passwordHelp">
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 

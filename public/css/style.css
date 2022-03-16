@@ -1,0 +1,35 @@
+/* General CSS */
+
+/* Sidemenu CSS */
+div.side-menu {
+  background-color: #00aef0;
+  height: 100vh;
+  z-index: 2;
+  color: white;
+  position: relative;
+}
+
+div.side-menu img {
+  padding-top: 2vh;
+}
+
+div.side-menu .copyright {
+  position: absolute;
+  bottom: 0;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+div.side-menu > ul {
+  list-style-type: none;
+}
+
+div.side-menu > ul > li {
+  padding: 1em 0;
+}
+
+div.side-menu > ul > li > a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
