@@ -4,6 +4,7 @@
     <img src="<?= URLROOT ?>/public/img/mbo_utrecht_logo_cut.jpg" alt="MBO Utrecht Logo">
     <li><a href="<?= URLROOT ?>/pages/login">Login/Register</a></li>
     <li><a href="<?= URLROOT ?>/superusers/index">Super User</a></li>
+    <li><a href="<?= URLROOT ?>/warehouseadmin/index">warehouseadmin</a></li>  
     <li><a href="<?= URLROOT ?>/pages/overview">Overview Articles</a></li>
     <li><a href="<?= URLROOT ?>/pages/about">About Us</a></li>
     <li><a href="<?= URLROOT ?>/pages/contact">Contact us</a></li>
