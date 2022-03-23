@@ -9,7 +9,22 @@
     </div>
     <!-- Page Content -->
     <div class="content col-10">
-      <h1>Order</h1>
+      <h1 class="text-center pt-2">Order Articles</h1>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="text" class="form-control" id="productName" placeholder="Pencil...">
+        </div>
+        <div class="form-group">
+          <label for="productLink">Product Link</label>
+          <input type="text" class="form-control" id="productLink" placeholder="www.website.com/pencil....">
+        </div>
+        <div class="form-group">
+          <label for="productDescription">Product Description</label>
+          <textarea class="form-control" id="productDescription" rows="3" placeholder="A beautiful blue pencil..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   </div>
 </div>
