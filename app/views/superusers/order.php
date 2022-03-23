@@ -1,5 +1,6 @@
 <!-- // Require head include -->
-<?php require_once APPROOT . '\views\includes\head.php'; ?>
+<?php require_once APPROOT . '\views\includes\head.php';
+?>
 
 <div class="container-fluid">
   <div class="row">
@@ -10,7 +11,7 @@
     <!-- Page Content -->
     <div class="content col-10">
       <h1 class="text-center pt-2">Order Articles</h1>
-      <form action="#" method="post">
+      <form action="<?php echo URLROOT; ?>/superusers/order" method="POST">
         <div class="form-group">
           <label for="productName">Product Name</label>
           <input type="text" class="form-control" id="productName" placeholder="Pencil...">
@@ -23,7 +24,7 @@
           <label for="productDescription">Product Description</label>
           <textarea class="form-control" id="productDescription" rows="3" placeholder="A beautiful blue pencil..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" id="submit" value="submit">Submit</button>
       </form>
     </div>
   </div>

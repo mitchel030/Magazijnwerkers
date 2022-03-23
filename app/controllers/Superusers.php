@@ -3,7 +3,7 @@ class Superusers extends Controller
 {
   public function __construct()
   {
-    $this->userModel = $this->model('Superuser');
+    $this->superUserModel = $this->model('Superuser');
   }
 
   public function index()
