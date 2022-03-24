@@ -13,6 +13,10 @@ class Superusers extends Controller
 
   public function order()
   {
+    if (isset($_POST)) {
+      var_dump($_POST);
+      var_dump($_POST["submitOrder"]);
+    }
     $this->view('superusers/order');
   }
 

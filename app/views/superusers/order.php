@@ -1,6 +1,5 @@
 <!-- // Require head include -->
-<?php require_once APPROOT . '\views\includes\head.php';
-?>
+<?php require_once APPROOT . '\views\includes\head.php'; ?>
 
 <div class="container-fluid">
   <div class="row">
@@ -14,17 +13,17 @@
       <form action="<?php echo URLROOT; ?>/superusers/order" method="POST">
         <div class="form-group">
           <label for="productName">Product Name</label>
-          <input type="text" class="form-control" id="productName" placeholder="Pencil...">
+          <input type="text" class="form-control" id="productName" name="productName" placeholder="Pencil...">
         </div>
         <div class="form-group">
           <label for="productLink">Product Link</label>
-          <input type="text" class="form-control" id="productLink" placeholder="www.website.com/pencil....">
+          <input type="text" class="form-control" id="productLink" name="productLink" placeholder="www.website.com/pencil....">
         </div>
         <div class="form-group">
           <label for="productDescription">Product Description</label>
-          <textarea class="form-control" id="productDescription" rows="3" placeholder="A beautiful blue pencil..."></textarea>
+          <textarea class="form-control" id="productDescription" rows="3" name="productDescription" placeholder="A beautiful blue pencil..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" id="submit" value="submit">Submit</button>
+        <button type="submit" class="btn btn-primary" id="submit" name="submitOrder" value="submitOrder">Submit</button>
       </form>
     </div>
   </div>
