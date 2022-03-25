@@ -34,3 +34,10 @@ function closeModal(modal) {
   modal.classList.remove('active')
   overlay.classList.remove('active')
 }
+
+// Steven JS
+// Hide order message after clicking on it
+const orderMessage = document.querySelector('.superuser--order')
+orderMessage.addEventListener('hover', function() {
+  orderMessage.classList.add('hidden')
+})
