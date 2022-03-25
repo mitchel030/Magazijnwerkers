@@ -13,9 +13,16 @@ class Superusers extends Controller
 
   public function order()
   {
+    // Check if $_POST has been set
     if (isset($_POST)) {
-      var_dump($_POST);
-      var_dump($_POST["submitOrder"]);
+      // Check if submitOrder button has been pressed
+      if (isset($_POST["submitOrder"])) {
+        // Check if order values are filled in
+        if (!empty($_POST["productName"]) && !empty($_POST["productLink"]) && !empty($_POST["productDescription"])) {
+          // Initialize Order() process in model Superuser.php with form details as arguments
+          $this->superUserModel->placeOrder($_POST["productName"], $_POST["productLink"], $_POST["productDescription"]);
+        }
+      }
     }
     $this->view('superusers/order');
   }
