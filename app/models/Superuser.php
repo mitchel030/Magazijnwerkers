@@ -26,7 +26,17 @@ class Superuser
     // Execute sql statement
     $this->db->execute();
 
-    
-    //var_dump($n, $l, $d);
+    // Return an array with a css variable and display message
+    if ($this->db->rowCount() === 1) {
+      return [
+        "message" => "Order has been placed successfully",
+        "css" => "superuser--order order--success"
+      ];
+    } else {
+      return [
+        "message" => "Order has not been placed. Please try again later",
+        "css" => "superuser--order order--failure"
+      ];
+    }
   }
 }

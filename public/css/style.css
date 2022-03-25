@@ -1,5 +1,7 @@
 /* General CSS */
-
+.hidden {
+  display: none;
+}
 /* Mitchell CSS */
 *,
 *::after,
@@ -146,6 +148,21 @@ form {
   width: 50%;
   text-align: center;
 }
+
+/* Steven CSS */
+/* Superusers Order CSS */
+.superuser--order {
+  
+}
+
+.order--success {
+  color:#2e8b57;
+}
+
+.order--failure {
+  color: #d60202;
+}
+
 /* Sidemenu CSS */
 div.side-menu {
   background-color: #00aef0;

@@ -24,6 +24,8 @@
           <textarea class="form-control" id="productDescription" rows="3" name="productDescription" placeholder="A beautiful blue pencil..."></textarea>
         </div>
         <button type="submit" class="btn btn-primary" id="submit" name="submitOrder" value="submitOrder">Submit</button>
+        <!-- Display a success or error message if user has placed an order -->
+        <?php echo $data; ?>
       </form>
     </div>
   </div>
