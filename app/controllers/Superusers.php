@@ -13,6 +13,9 @@ class Superusers extends Controller
 
   public function order()
   {
+    // Declare variable $orderMessage
+    $orderMessage = null;
+    
     // Check if $_POST has been set
     if (isset($_POST)) {
       // Check if submitOrder button has been pressed
