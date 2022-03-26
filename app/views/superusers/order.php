@@ -1,7 +1,6 @@
 <!-- // Require head include -->
 <?php require_once APPROOT . '\views\includes\head.php'; ?>
-<!-- Display a success or error message if user has placed an order -->
-<?php echo $data; ?>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-2 p-0">
@@ -29,6 +28,12 @@
     </div>
   </div>
 </div>
-
+<div class="superuser--order alert alert-success" role="alert">
+  Order has been placed successfully
+  <span>Click to dismiss</span>
+</div>
+<!-- Display a success or error message if user has placed an order -->
+<?php //echo $data; 
+?>
 <!-- // Require end include -->
 <?php require_once APPROOT . '\views\includes\end.php'; ?>

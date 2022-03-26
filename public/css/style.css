@@ -152,31 +152,25 @@ form {
 /* Steven CSS */
 /* Superusers Order CSS */
 .superuser--order {
+  position: absolute;
+  top: 2vh;
+  right: 6vh;
+}
+
+.superuser--order span {
   display: block;
-  font-weight: 700;
-  margin: 1em;
-  border-radius: 5px;
-  padding: 1em;
-  transition-duration: 0.2s;
+  text-align: center;
+  padding-top: 0.5em;
+  font-size: 12px;
 }
 
-.order--success {
-  color: #2e8b57;
-  border: 2px solid #2e8b57;
-}
-
-.order--success:hover {
-  background-color: #2e8b57;
+.alert-success:hover {
+  background-color: #155724;
   color: white;
 }
 
-.order--failure {
-  color: #d60202;
-  border: 2px solid #d60202;
-}
-
-.order--failure:hover {
-  background-color: #d60202;
+.alert-danger:hover {
+  background: #721c24;
   color: white;
 }
 

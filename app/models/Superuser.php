@@ -29,13 +29,13 @@ class Superuser
     // Return an array with a css variable and display message
     if ($this->db->rowCount() === 1) {
       return [
-        "message" => "Order has been placed successfully",
-        "css" => "superuser--order order--success"
+        "message" => "Order has been placed successfully!",
+        "css" => "superuser--order alert alert-success"
       ];
     } else {
       return [
-        "message" => "Order has not been placed. Please try again later",
-        "css" => "superuser--order order--failure"
+        "message" => "Order has not been placed. Please try again later.",
+        "css" => "superuser--order alert alert-danger"
       ];
     }
   }
