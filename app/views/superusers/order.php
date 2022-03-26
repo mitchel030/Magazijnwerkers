@@ -28,12 +28,7 @@
     </div>
   </div>
 </div>
-<div class="superuser--order alert alert-success" role="alert">
-  Order has been placed successfully
-  <span>Click to dismiss</span>
-</div>
 <!-- Display a success or error message if user has placed an order -->
-<?php //echo $data; 
-?>
+<?php echo $data; ?>
 <!-- // Require end include -->
 <?php require_once APPROOT . '\views\includes\end.php'; ?>
