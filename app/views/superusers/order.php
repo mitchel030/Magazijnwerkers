@@ -1,6 +1,7 @@
 <!-- // Require head include -->
 <?php require_once APPROOT . '\views\includes\head.php'; ?>
-
+<!-- Display a success or error message if user has placed an order -->
+<?php echo $data; ?>
 <div class="container-fluid">
   <div class="row">
     <div class="col-2 p-0">
@@ -24,8 +25,6 @@
           <textarea class="form-control" id="productDescription" rows="3" name="productDescription" placeholder="A beautiful blue pencil..."></textarea>
         </div>
         <button type="submit" class="btn btn-primary" id="submit" name="submitOrder" value="submitOrder">Submit</button>
-        <!-- Display a success or error message if user has placed an order -->
-        <?php echo $data; ?>
       </form>
     </div>
   </div>

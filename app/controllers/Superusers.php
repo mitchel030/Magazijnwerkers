@@ -15,7 +15,7 @@ class Superusers extends Controller
   {
     // Declare variable $orderMessage
     $orderMessage = null;
-    
+
     // Check if $_POST has been set
     if (isset($_POST)) {
       // Check if submitOrder button has been pressed
@@ -27,6 +27,8 @@ class Superusers extends Controller
           $m = $this->superUserModel->placeOrder($_POST["productName"], $_POST["productLink"], $_POST["productDescription"]);
           // Puts the array information into a HTML template. This will be given to the view.
           $orderMessage = "<span class='".$m["css"]."'>".$m["message"]."</span>";
+          // Unset the post values (form values) after saving order in database
+          unset($_POST);
         }
       }
     }
