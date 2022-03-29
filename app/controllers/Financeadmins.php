@@ -1,23 +1,23 @@
 <?php
-class Pages extends Controller
+class Financeadmins extends Controller
 {
   public function __construct()
   {
-    $this->userModel = $this->model('Financeadmin');
+    $this->userModel = $this->model('Financeadmins');
   }
 
   public function index()
   {
-    $this->view('financeadmin/index');
+    $this->view('Financeadmins/index');
   }
 
-  public function about()
+  public function approve()
   {
-    $this->view('financeadmin/acceptreject');
+    $this->view('Financeadmins/approve');
   }
 
-  public function login()
+  public function assortment()
   {
-    $this->view('financeadmin/overviewarticles');
+    $this->view('Financeadmins/assortment ');
   }
 }
