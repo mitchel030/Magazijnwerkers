@@ -3,7 +3,7 @@ class Superusers extends Controller
 {
   public function __construct()
   {
-    $this->userModel = $this->model('Superuser');
+    $this->superUserModel = $this->model('Superuser');
   }
 
   public function index()
@@ -26,9 +26,26 @@ class Superusers extends Controller
     $this->view('superusers/request');
   }
 
+  // Initiate getAssortment() function in model 'superuser' and send data with view.
   public function assortment()
   {
-    $this->view('superusers/assortment');
+    $assortment = $this->superUserModel->getAssortment();
+
+    // Create HTML Row template for assortment view of superusers
+    $rows = "";
+    foreach ($assortment as $a) {
+      $rows .= "<tr>";
+      $rows .= "<th scope='row'>" . $a->id . "</th>";
+      $rows .= "<td>" . $a->name . "</td>";
+      $rows .= "<td>" . $a->total . "</td>";
+      $rows .= "<td>" . $a->outstanding . "</td>";
+      $rows .= "<td>" . $a->available . "</td>";
+      $rows .= "</tr>";
+    }
+
+    $data = $rows;
+
+    $this->view('superusers/assortment', $data);
   }
 
   public function profile()
