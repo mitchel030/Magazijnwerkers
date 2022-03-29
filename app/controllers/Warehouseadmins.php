@@ -1,5 +1,5 @@
 <?php
-class Warehouseadmin extends Controller
+class Warehouseadmins extends Controller
 {
   public function __construct()
   {
@@ -8,31 +8,32 @@ class Warehouseadmin extends Controller
 
   public function index()
   {
-    $this->view('warehouseadmin/index');
+    $this->view('warehouseadmins/index');
   }
 
   public function lending()
   {
-    $this->view('warehouseadmin/Lendingitems');
+    $this->view('warehouseadmins/lendingitems');
   }
 
   public function managearticles()
   {
-    $this->view('warehouseadmin/Managearticles');
+    $this->view('warehouseadmins/managearticles');
   }
 
   public function takingitems()
   {
-    $this->view('warehouseadmin/Takingitems');
+    $this->view('warehouseadmins/takingitems');
   }
 
   public function viewwarehouse()
   {
-    $this->view('warehouseadmin/Viewwarehouse');
+    $this->view('warehouseadmins/viewwarehouse');
   }
 
   public function profile()
   {
-    $this->view('warehouseadmin/profile');
+    $this->view('warehouseadmins/profile');
   }
 }
+?>

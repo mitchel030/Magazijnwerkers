@@ -5,11 +5,11 @@
   <div class="row">
     <div class="col-2 p-0">
       <!-- Sidebar -->
-      <?php require_once APPROOT . '\views\warehouseadmin\sidebar.php'; ?>
+      <?php require_once APPROOT . '\views\warehouseadmins\sidebar.php'; ?>
     </div>
     <!-- Page Content -->
     <div class="content col-10">
-      <h1>Profile Content</h1>
+      <h1>Order</h1>
     </div>
   </div>
 </div>
