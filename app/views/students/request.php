@@ -54,7 +54,7 @@ require_once APPROOT . '\views\includes\head.php';
                             <label class="visually-hidden">Reason</label>
                             <input type="reason" name="inputReason" class="form-control" id="inputreason" placeholder="Reason">
                         </div>
-                        <br></br>
+                        <br></br>   
                         <div class="row">
                             <div class="col-12">
                                 <button name="submit" type="submit" class="btn btn-primary">Submit</button>
@@ -67,7 +67,7 @@ require_once APPROOT . '\views\includes\head.php';
         </div>
     </div>
 </div>
-<?php echo $data; ?>
+
 
 <!-- // Require end include -->
 <?php require_once APPROOT . '\views\includes\end.php'; ?>
