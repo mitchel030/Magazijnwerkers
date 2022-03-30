@@ -13,7 +13,6 @@ class Superusers extends Controller
 
   public function order()
   {
-    $this->view('superusers/order');
     // Declare variable $orderMessage
     $orderMessage = null;
 
@@ -27,7 +26,7 @@ class Superusers extends Controller
           //Returns an array with message CSS and text
           $m = $this->superUserModel->placeOrder($_POST["productName"], $_POST["productLink"], $_POST["productDescription"]);
           // Puts the array information into a HTML template. This will be given to the view.
-          $orderMessage = "<div class='". $m["css"] ."' role='alert'>". $m["message"] ." <span>Click to dismiss</span> </div>";
+          $orderMessage = "<div class='" . $m["css"] . "' role='alert'>" . $m["message"] . " <span>Click to dismiss</span> </div>";
           // Unset the post values (form values) after saving order in database
           unset($_POST);
         }
@@ -63,9 +62,9 @@ class Superusers extends Controller
       $rows .= "</tr>";
     }
 
-    $data = $rows;
+    $assortmentRows = $rows;
 
-    $this->view('superusers/assortment', $data);
+    $this->view('superusers/assortment', $assortmentRows);
   }
 
   public function profile()
