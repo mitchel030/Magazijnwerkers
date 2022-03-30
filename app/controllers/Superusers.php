@@ -8,6 +8,22 @@ class Superusers extends Controller
 
   public function index()
   {
+    $allUsers = $this->superUserModel->getAllUsers();
+
+    // Create HTML Row template for assortment view of superusers
+    $userRows = "";
+    foreach ($allUsers as $au) {
+      $userRows .= "<tr>";
+      $userRows .= "<th scope='row'>" . $au->idusers . "</th>";
+      $userRows .= "<td>" . $au->username . "</td>";
+      $userRows .= "<td>" . $au->password . "</td>";
+      $userRows .= "<td>" . $au->mail . "</td>";
+      $userRows .= "<td>" . $au->permissions . "</td>";
+      $userRows .= "</tr>";
+    }
+
+    $userHTML = $userRows;
+
     $um = null;
     // Retrieve post data, and put it in the database calling a function.
     if (isset($_POST)) {
@@ -29,7 +45,11 @@ class Superusers extends Controller
       }
     }
 
-    $this->view('superusers/index', $um);
+    // Return assoc array with rows and user message
+    $this->view('superusers/index', $indexData = [
+      "rows" => $userHTML,
+      "um" => $um
+    ]);
   }
 
   public function order()
