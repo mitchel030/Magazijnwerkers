@@ -8,9 +8,17 @@ class Superusers extends Controller
 
   public function index()
   {
+    // Retrieve post data, and put it in the database calling a function.
     if (isset($_POST)) {
       if (isset($_POST["createUser"])) {
-        echo " x";
+        // Put all 4 post values into a variable
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $role = $_POST["role"];
+
+        // Call createUser function in model
+        $this->superUserModel->createUser($name, $email, $password, $role);
       }
     }
 
