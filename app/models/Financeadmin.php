@@ -1,5 +1,5 @@
 <?php
-class Financeadmins
+class Financeadmin
 {
   private $db;
 
