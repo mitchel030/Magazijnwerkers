@@ -1,4 +1,7 @@
 /* General CSS */
+.hidden {
+  display: none !important;
+}
 
 /* Mitchell CSS */
 *,
@@ -146,6 +149,32 @@ form {
   width: 50%;
   text-align: center;
 }
+
+/* Steven CSS */
+/* Superusers Order CSS */
+.superuser--order {
+  position: absolute;
+  top: 2vh;
+  right: 6vh;
+}
+
+.superuser--order span {
+  display: block;
+  text-align: center;
+  padding-top: 0.5em;
+  font-size: 12px;
+}
+
+.alert-success:hover {
+  background-color: #155724;
+  color: white;
+}
+
+.alert-danger:hover {
+  background: #721c24;
+  color: white;
+}
+
 /* Sidemenu CSS */
 div.side-menu {
   background-color: #00aef0;
