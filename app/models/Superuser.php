@@ -8,6 +8,16 @@ class Superuser
     $this->db = new Database;
   }
 
+  // Function to retrieve all users
+  public function getAllUsers()
+  {
+    $this->db->query("SELECT * FROM users");
+
+    $result = $this->db->resultSet();
+
+    return $result;
+  }
+
   public function getAssortment()
   {
     $this->db->query("SELECT * FROM assortment");
