@@ -8,7 +8,48 @@ class Superusers extends Controller
 
   public function index()
   {
-    $this->view('superusers/index');
+    $allUsers = $this->superUserModel->getAllUsers();
+
+    // Create HTML Row template for assortment view of superusers
+    $userRows = "";
+    foreach ($allUsers as $au) {
+      $userRows .= "<tr>";
+      $userRows .= "<th scope='row'>" . $au->idusers . "</th>";
+      $userRows .= "<td>" . $au->username . "</td>";
+      $userRows .= "<td>" . $au->password . "</td>";
+      $userRows .= "<td>" . $au->mail . "</td>";
+      $userRows .= "<td>" . $au->permissions . "</td>";
+      $userRows .= "</tr>";
+    }
+
+    $userHTML = $userRows;
+
+    $um = null;
+    // Retrieve post data, and put it in the database calling a function.
+    if (isset($_POST)) {
+      if (isset($_POST["createUser"])) {
+        // Put all 4 post values into a variable
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $role = $_POST["role"];
+
+        // Call createUser function in model, return array in a variable
+        $userMessage = $this->superUserModel->createUser($name, $email, $password, $role);
+
+        // Create html message for creating user
+        $um = "<div class='" . $userMessage["css"] . "' role='alert'>" . $userMessage["message"] . " <span>Click to dismiss</span> </div>";
+
+        unset($_POST);
+
+      }
+    }
+
+    // Return assoc array with rows and user message
+    $this->view('superusers/index', $indexData = [
+      "rows" => $userHTML,
+      "um" => $um
+    ]);
   }
 
   public function order()
