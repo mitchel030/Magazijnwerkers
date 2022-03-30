@@ -3,7 +3,7 @@ class Financeadmins extends Controller
 {
   public function __construct()
   {
-    $this->userModel = $this->model('Financeadmins');
+    $this->userModel = $this->model('Financeadmin');
   }
 
   public function index()
@@ -18,6 +18,6 @@ class Financeadmins extends Controller
 
   public function assortment()
   {
-    $this->view('Financeadmins/assortment ');
+    $this->view('Financeadmins/assortment');
   }
 }
