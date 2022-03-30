@@ -2,6 +2,7 @@
 <div class="side-menu">
   <ul>
     <img src="<?= URLROOT ?>/public/img/mbo_utrecht_logo_cut.jpg" alt="MBO Utrecht Logo">
+    <li><a href="<?= URLROOT ?>/superusers/index">Manage Users</a></li>
     <li><a href="<?= URLROOT ?>/superusers/order">Order Articles</a></li>
     <li><a href="<?= URLROOT ?>/superusers/approve">Approve Orders</a></li>
     <li><a href="<?= URLROOT ?>/superusers/request">Request Articles</a></li>
