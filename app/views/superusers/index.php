@@ -69,6 +69,8 @@
     </div>
   </div>
 </div>
+<!-- Return data given in controller of superusers/index -->
+<?php echo $data; ?>
 
 <!-- // Require end include -->
 <?php require_once APPROOT . '\views\includes\end.php'; ?>

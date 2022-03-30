@@ -8,6 +8,7 @@ class Superusers extends Controller
 
   public function index()
   {
+    $um = null;
     // Retrieve post data, and put it in the database calling a function.
     if (isset($_POST)) {
       if (isset($_POST["createUser"])) {
@@ -17,12 +18,18 @@ class Superusers extends Controller
         $password = $_POST["password"];
         $role = $_POST["role"];
 
-        // Call createUser function in model
-        $this->superUserModel->createUser($name, $email, $password, $role);
+        // Call createUser function in model, return array in a variable
+        $userMessage = $this->superUserModel->createUser($name, $email, $password, $role);
+
+        // Create html message for creating user
+        $um = "<div class='" . $userMessage["css"] . "' role='alert'>" . $userMessage["message"] . " <span>Click to dismiss</span> </div>";
+
+        unset($_POST);
+
       }
     }
 
-    $this->view('superusers/index');
+    $this->view('superusers/index', $um);
   }
 
   public function order()
