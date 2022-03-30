@@ -3,7 +3,7 @@ class Financeadmins extends Controller
 {
   public function __construct()
   {
-    $this->userModel = $this->model('Financeadmins');
+    $this->userModel = $this->model('Financeadmin');
   }
 
   public function index()
