@@ -9,7 +9,6 @@
     </div>
     <!-- Page Content -->
     <div class="content col-10">
-      <h1>Order</h1>
       <h1 class="text-center pt-2">Order Articles</h1>
       <form action="<?php echo URLROOT; ?>/superusers/order" method="POST">
         <div class="form-group">
