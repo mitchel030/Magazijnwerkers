@@ -1,6 +1,6 @@
-<!-- // Require head include --> 
-<?php 
-require_once APPROOT . '\views\includes\head.php'; 
+<!-- // Require head include -->
+<?php
+require_once APPROOT . '\views\includes\head.php';
 ?>
 
 <div class="container-fluid">
@@ -54,9 +54,11 @@ require_once APPROOT . '\views\includes\head.php';
                             <label class="visually-hidden">Reason</label>
                             <input type="reason" name="inputReason" class="form-control" id="inputreason" placeholder="Reason">
                         </div>
-                        
-                        <div class="col-auto">
-                            <button name="submit" type="submit" class="btn btn-primary mb-3">Submit</button>
+                        <br></br>
+                        <div class="row">
+                            <div class="col-12">
+                                <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                            </div>
                         </div>
                     </form>
                     </p>
