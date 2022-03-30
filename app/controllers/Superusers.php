@@ -8,6 +8,12 @@ class Superusers extends Controller
 
   public function index()
   {
+    if (isset($_POST)) {
+      if (isset($_POST["createUser"])) {
+        echo " x";
+      }
+    }
+
     $this->view('superusers/index');
   }
 
