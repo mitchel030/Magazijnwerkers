@@ -9,10 +9,28 @@
     </div>
     <!-- Page Content -->
     <div class="content col-10">
-      <h1>Order</h1>
+      <h1 class="text-center pt-2">Order Articles</h1>
+      <form action="<?php echo URLROOT; ?>/superusers/order" method="POST">
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="text" class="form-control" id="productName" name="productName" placeholder="Pencil...">
+        </div>
+        <div class="form-group">
+          <label for="productLink">Product Link</label>
+          <input type="text" class="form-control" id="productLink" name="productLink" placeholder="www.website.com/pencil....">
+        </div>
+        <div class="form-group">
+          <label for="productDescription">Product Description</label>
+          <textarea class="form-control" id="productDescription" rows="3" name="productDescription" placeholder="A beautiful blue pencil..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit" name="submitOrder" value="submitOrder">Submit</button>
+      </form>
     </div>
   </div>
 </div>
+
+<!-- Display a success or error message if user has placed an order -->
+<?php echo $data; ?>
 
 <!-- // Require end include -->
 <?php require_once APPROOT . '\views\includes\end.php'; ?>
