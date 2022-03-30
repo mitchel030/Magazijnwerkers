@@ -5,6 +5,7 @@
     <li><a href="<?= URLROOT ?>/pages/login">Login/Register</a></li>
     <li><a href="<?= URLROOT ?>/superusers/index">Super User</a></li>
     <li><a href="<?= URLROOT ?>/financeadmins/index">Finance Admin</a></li>
+    <li><a href="<?= URLROOT ?>/warehouseadmins/index">warehouseadmin</a></li>  
     <li><a href="<?= URLROOT ?>/pages/overview">Overview Articles</a></li>
     <li><a href="<?= URLROOT ?>/pages/about">About Us</a></li>
     <li><a href="<?= URLROOT ?>/pages/contact">Contact us</a></li>
