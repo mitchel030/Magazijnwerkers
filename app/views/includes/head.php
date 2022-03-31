@@ -1,6 +1,8 @@
 <?php
-session_start();
-ob_start();
+// If there is no session, start a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 ?>
 
 <!doctype html>
