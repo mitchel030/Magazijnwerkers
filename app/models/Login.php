@@ -7,4 +7,10 @@ class Login
   {
     $this->db = new Database;
   }
+
+  // Login function, sanitizes user inputs and checks with database
+  public function login()
+  {
+    
+  }
 }
