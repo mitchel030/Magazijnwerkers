@@ -4,14 +4,14 @@
 <!-- Login content -->
 <div class="container-fluid login">
   <!-- Background image -->
-  <img class="login--background" src="<?= URLROOT ?>/public/img/login-background.jpg" alt="Login Background">
+  <img class="login--background no-drag" src="<?= URLROOT ?>/public/img/login-background.jpg" alt="Login Background">
 
   <div class="container">
     <div class="row login--form">
       <!-- Login Form -->
       <div class="col-4">
         <!-- MBO Utrecht Logo -->
-        <img class="login--logo" src="<?= URLROOT ?>/public/img/mbo_utrecht_logo_cut.jpg" alt="MBO Utrecht Logo">
+        <img class="login--logo no-drag" src="<?= URLROOT ?>/public/img/mbo_utrecht_logo_cut.jpg" alt="MBO Utrecht Logo">
         <form action="" method="POST">
           <div class="form-group">
             <i class="fa-solid fa-user"></i>
