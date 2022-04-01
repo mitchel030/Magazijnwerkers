@@ -2,6 +2,8 @@
 
 <div class="container-fluid">
   <div class="row">
+    <!-- Profile button -->
+   
     <div class="col-2 p-0">
       <!-- Sidebar -->
       <?php require_once APPROOT . '\views\students\sidebar.php'; ?>

@@ -208,3 +208,76 @@ div.side-menu > ul > li > a {
   text-decoration: none;
   font-weight: 700;
 }
+/* Damiën's CSS */
+
+div.Profile-btn {
+position: absolute; 
+top: 0;
+right: 0;
+margin: 10px;
+size: 25px; 
+;
+}
+div.Profile-btn > a {
+  color: #00AEF0;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+div.P-background{
+  background-color: #00aef0;
+color: white;
+font-weight: 700;
+}
+div>input.form-control-plaintext{
+  color: white;
+font-weight: 700;
+}
+/* profile picture */
+    .Profile-Picture {
+      position: absolute; 
+      top: 0;
+      right: 20%;
+      margin: 10px;
+      size: 25px; 
+    }
+    .profile-pic {
+      width: 200px;
+      max-height: 200px;
+      display: inline-block;
+    }
+
+    .file-upload {
+      display: none;
+    }
+    .circle {
+      border-radius: 100% !important;
+      overflow: hidden;
+      width: 128px;
+      height: 128px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      position: absolute;
+      top: 72px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .p-image {
+    position: absolute;
+    top: 160px;
+    left: 100px;
+    color: #666666;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    }
+    .p-image:hover {
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    }
+    .upload-button {
+    font-size: 1.2em;
+    }
+
+    .upload-button:hover {
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    color: #999;
+    }
