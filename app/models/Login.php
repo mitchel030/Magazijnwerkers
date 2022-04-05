@@ -16,7 +16,7 @@ class Login
     $p = trim(filter_var($password, FILTER_SANITIZE_STRING));
 
     // Create SQL statement to select email, password and salt from users table where e-mail is user email
-    $sql = 'SELECT `Email`, `Password`, `Salt`, `IsActive` FROM `login` WHERE `Email` = "' . $e . '";';
+    $sql = 'SELECT `LoginId`, `Email`, `Password`, `Salt`, `IsActive` FROM `login` WHERE `Email` = "' . $e . '";';
     // Prepare and execute sql query
     $this->db->query($sql);
     // Put executed information in $data
@@ -28,8 +28,26 @@ class Login
       if ($data[0]->IsActive === '1') {
         // Verify hashed_password. Password composition: password.salt
         if (password_verify($p . $data[0]->Salt, $data[0]->Password) === true) {
-          // If password_verify returns true, get persons userroles
-          var_dump($data[0]);
+          // If password_verify returns true, get persons userrole based on LoginId
+          $id = $data[0]->LoginId;
+          // Execute to get query userrole name
+          $sql = "SELECT `R`.Userrole FROM `loginrole` as `LR` INNER JOIN `role` as `R` ON `LR`.RoleId = `R`.RoleId WHERE `LR`.LoginId = $id;";
+          $this->db->query($sql);
+          $this->db->execute();
+          // Returns userrole as a string
+          $r = $this->db->single();
+          $userrole = $r->Userrole;
+          var_dump($userrole);
+          // Initiate session if not set
+          if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+          }
+          $_SESSION["userrole"] = $userrole;
+          $_SESSION["email"] = $e;
+          // Create redirect url
+          $redirectUrl = URLROOT . "/" . $userrole . "/index";
+          var_dump($redirectUrl);
+          header('Location: ' . $redirectUrl);
         } else {
           // Password did not verify with saved password in database
         }
