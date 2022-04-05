@@ -26,9 +26,9 @@ class Login
     if ($this->db->rowCount() === 1) {
       // Check if person IsActive = 1
       if ($data[0]->IsActive === '1') {
-        // Verify hashed_password
-        if (password_verify($p, $data[0]->Password) === 1) {
-          // Start user session and declare roles
+        // Verify hashed_password. Password composition: password.salt
+        if (password_verify($p . $data[0]->Salt, $data[0]->Password) === true) {
+          // If password_verify returns true, get persons userroles
           var_dump($data[0]);
         } else {
           // Password did not verify with saved password in database
@@ -80,10 +80,24 @@ class Login
                           '$hashed', 
                           '$salt', 
                           'Test',  
-                          '2022-04-05 11:45:18.000000', 
-                          '2022-04-05 11:45:18.000000');";
+                          'CURRENT_TIMESTAMP', 
+                          'CURRENT_TIMESTAMP');";
     // Prepare and execute test user details into login table
     $this->db->query($sql);
     $this->db->execute();
+
+    // Select loginID from 
+    $sql = "SELECT `LoginId` FROM `login` WHERE `Email` = 'test@test.nl'";
+    $this->db->query($sql);
+    $loginid = $this->db->resultSet();
+    $id = $loginid[0]->LoginId;
+    var_dump($id);
+
+    // If id exists, create login with userrole super-user by default
+    if ($loginid) {
+      $sql = "INSERT INTO `loginrole` (`LoginId`, `RoleId`, `CreatedDtm`, `UpdatedDtm`) VALUES ('$id', '1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)";
+      $this->db->query($sql);
+      $this->db->execute();
+    }
   }
 }
