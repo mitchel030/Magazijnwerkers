@@ -8,7 +8,7 @@ class Login
     $this->db = new Database;
   }
 
-  // Login function, sanitizes user inputs and checks with database
+  // Login function, sanitizes person inputs and checks with database
   public function validateLogin($email, $password)
   {
     // Trim and filter given email and password from controller
@@ -24,8 +24,18 @@ class Login
 
     // If sql query returns 1 row (E-mail exists in database)
     if ($this->db->rowCount() === 1) {
-      var_dump($data);
-      // Execute next code if e-mail exists
+      // Check if person IsActive = 1
+      if ($data[0]->IsActive === '1') {
+        // Verify hashed_password
+        if (password_verify($p, $data[0]->Password) === 1) {
+          // Start user session and declare roles
+          var_dump($data[0]);
+        } else {
+          // Password did not verify with saved password in database
+        }
+      } else {
+        // Person's IsActive saved in database is set to 0. (Inactive)
+      }
     } else {
       var_dump($data);
       // Execute code when e-mail does not exist in database
