@@ -8,6 +8,10 @@ class Logins extends Controller
 
   public function index()
   {
+    // Activate testUser function if you need a test user in your database to log in with.
+    // Test values: email = test@test.nl  |  password = test
+    //$this->loginModel->testUser();
+
     // Check if $_POST is send
     if (isset($_POST)) {
       // Check if login form has been submitted

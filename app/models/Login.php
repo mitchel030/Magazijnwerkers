@@ -42,4 +42,48 @@ class Login
 
     }
   }
+
+  // Creates test user with email: test@test.nl & password: test
+  public function testUser()
+  {
+    // Check if user exists
+    $t = "SELECT `Email` FROM `login` WHERE `Email` = 'test@test.nl'";
+    $this->db->query($t);
+    $this->db->execute();
+    if ($this->db->rowCount() === 1) {
+      return "user already exists";
+    }
+
+    // Define test email and password
+    $email = "test@test.nl";
+    $pw = "test";
+    // Generate random number (salt)
+    $salt = bin2hex(random_bytes(10));
+    // Hash the password. Password construction: User password + Salt
+    $hashed = password_hash($pw . $salt, PASSWORD_DEFAULT);
+
+    // Verify password using variables above // test purposes
+    // $verify = password_verify($pw . $salt, $hashed);
+    // var_dump($verify);
+
+    $sql = "INSERT INTO `login` 
+                          (`LoginId`, 
+                          `Email`, 
+                          `Password`, 
+                          `Salt`, 
+                          `Username`,  
+                          `CreatedDtm`, 
+                          `UpdatedDtm`) 
+                          VALUES 
+                          (NULL, 
+                          '$email', 
+                          '$hashed', 
+                          '$salt', 
+                          'Test',  
+                          '2022-04-05 11:45:18.000000', 
+                          '2022-04-05 11:45:18.000000');";
+    // Prepare and execute test user details into login table
+    $this->db->query($sql);
+    $this->db->execute();
+  }
 }
