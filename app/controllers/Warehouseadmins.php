@@ -3,8 +3,9 @@ class Warehouseadmins extends Controller
 {
   public function __construct()
   {
-    $this->userModel = $this->model('Warehouseadmin');
+    $this->warehouseUserModel = $this->model('Warehouseadmin');
   }
+ 
 
   public function index()
   {
@@ -26,9 +27,25 @@ class Warehouseadmins extends Controller
     $this->view('warehouseadmins/takingitems');
   }
 
-  public function viewwarehouse()
+  public function assortment()
   {
-    $this->view('warehouseadmins/viewwarehouse');
+    $assortment = $this->warehouseUserModel->getAssortment();
+
+    // Create HTML Row template for assortment view of Warehouseadmin
+    $rows = "";
+    foreach ($assortment as $a) {
+      $rows .= "<tr>";
+      $rows .= "<th scope='row'>" . $a->id . "</th>";
+      $rows .= "<td>" . $a->name . "</td>";
+      $rows .= "<td>" . $a->total . "</td>";
+      $rows .= "<td>" . $a->outstanding . "</td>";
+      $rows .= "<td>" . $a->available . "</td>";
+      $rows .= "</tr>";
+    }
+
+    $assortmentRows = $rows;
+
+    $this->view('warehouseadmins/assortment', $assortmentRows);
   }
 
   public function profile()
