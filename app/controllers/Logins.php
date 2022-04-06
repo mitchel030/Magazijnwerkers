@@ -8,6 +8,8 @@ class Logins extends Controller
 
   public function index()
   {
+    // Default login message
+    $loginMessage = null;
     // Activate testUser function if you need a test user in your database to log in with.
     // Test values: email = test@test.nl  |  password = test
     //$this->loginModel->testUser();
@@ -23,6 +25,6 @@ class Logins extends Controller
         }
       }
     }
-    $this->view('index');
+    $this->view('index', $loginMessage);
   }
 }
