@@ -50,14 +50,24 @@ class Login
           header('Location: ' . $redirectUrl);
         } else {
           // Password did not verify with saved password in database
+          return [
+            "css" => "login--message alert alert-danger",
+            "message" => "Your password does not match! (with password in our database)"
+          ];
         }
       } else {
         // Person's IsActive saved in database is set to 0. (Inactive)
+        return [
+          "css" => "login--message alert alert-danger",
+          "message" => "Your account is not active. (IsActive status set to 0)"
+        ];
       }
     } else {
-      var_dump($data);
       // Execute code when e-mail does not exist in database
-
+      return [
+        "css" => "login--message alert alert-danger",
+        "message" => "E-mail does not exist (in database)"
+      ];
     }
   }
 
