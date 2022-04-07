@@ -8,7 +8,7 @@ class Logins extends Controller
 
   public function index()
   {
-    // Default login message
+    // Default login message set to null to prevent php unknown variable error
     $loginMessage = null;
     // Activate testUser function if you need a test user in your database to log in with.
     // Test values: email = test@test.nl  |  password = test
@@ -20,8 +20,10 @@ class Logins extends Controller
       if (isset($_POST['login'])) {
         // Check if $_POST form inputs are not empty
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
-          // Initiate login function in Login model
-          $loginMessage = $this->loginModel->validateLogin($_POST['email'], $_POST['password']);
+          // Initiate login function in Login model, return an array in $loginMessageDetails
+          $loginMessageDetails = $this->loginModel->validateLogin($_POST['email'], $_POST['password']);
+          // Create html message in $loginMessage
+          $loginMessage = "<div class='" . $loginMessageDetails["css"] . "' role='alert'>" . $loginMessageDetails["message"] . "</div>";
         }
       }
     }
