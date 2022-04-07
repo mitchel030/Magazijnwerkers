@@ -22,6 +22,7 @@
             <input type="password" name="password" class="form-control" placeholder="Password" required>
           </div>
           <button type="submit" name="login" class="btn btn-primary">log in</button>
+          <?= $data["loginMessage"] ?>
         </form>
       </div>
     </div>

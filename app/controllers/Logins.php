@@ -25,6 +25,8 @@ class Logins extends Controller
         }
       }
     }
-    $this->view('index', $loginMessage);
+    $this->view('index', $loginData = [
+      "loginMessage" => $loginMessage
+    ]);
   }
 }
