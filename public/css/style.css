@@ -132,6 +132,11 @@ tr:hover {
   margin: 0;
 }
 
+.login--message {
+  padding: .5rem;
+  margin-top: .5rem;
+}
+
 .login--logo {
   position: relative;
   background-color: #fff;
@@ -227,12 +232,12 @@ tr:hover {
   font-size: 12px;
 }
 
-.alert-success:hover {
+.superuser--order .alert-success:hover {
   background-color: #155724;
   color: white;
 }
 
-.alert-danger:hover {
+.superuser--order .alert-danger:hover {
   background: #721c24;
   color: white;
 }
