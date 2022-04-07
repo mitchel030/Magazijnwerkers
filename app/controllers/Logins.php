@@ -25,6 +25,10 @@ class Logins extends Controller
           // Create html message in $loginMessage
           $loginMessage = "<div class='" . $loginMessageDetails["css"] . "' role='alert'>" . $loginMessageDetails["message"] . "</div>";
         }
+        // Return error message if user did not fill in the form inputs
+        else {
+          $loginMessage = "<div class='login--message alert alert-danger' role='alert'>Please fill in your e-mail and password.</div>";
+        }
       }
     }
     $this->view('index', $loginData = [
