@@ -210,6 +210,80 @@ div.side-menu > ul > li > a {
 }
 /* Damiën's CSS */
 
+/* The Modal (background) */
+div.modalBtn {
+  transition-duration: 0.4s;
+}
+
+div.modalBtn:hover {
+  background-color: #00aef0; /* Green */
+  color: white;
+}
+
+
+
+.editModal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 6; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  right: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #00aef0;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  
+}
+div.edit {
+  background-color: #00aef0;
+
+}
+#emailHelp{
+  color: rgb(205, 205, 205);
+}
+form.form-editPersonalInfo{
+  margin-top: 0px;
+  border-color: #00aef0;
+  color: white;
+  font-weight: 700;
+}
+
+div.edit>input{
+  background-color: #00aef0;
+  color: white;
+  font-weight: 700;
+}
+
+/* The Close Button */
+.close {
+  color: #fffefe;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
 div.Profile-btn {
 position: absolute; 
 top: 0;
