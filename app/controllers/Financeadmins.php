@@ -18,6 +18,6 @@ class Financeadmins extends Controller
 
   public function assortment()
   {
-    $this->view('Financeadmins/assortment ');
+    $this->view('Financeadmins/assortment');
   }
 }
