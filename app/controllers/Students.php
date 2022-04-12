@@ -6,6 +6,8 @@ class Students extends Controller
     $this->userModel = $this->model('Student');
     // Initiate role model
     $this->roleModel = $this->model('Role');
+    // Call validate session function
+    $this->roleModel->validateSessionRole("students");
   }
 
   public function index()

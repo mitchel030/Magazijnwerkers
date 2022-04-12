@@ -6,6 +6,8 @@ class Financeadmins extends Controller
     $this->userModel = $this->model('Financeadmin');
     // Initiate role model
     $this->roleModel = $this->model('Role');
+    // Call validate session function
+    $this->roleModel->validateSessionRole("financeadmins");
   }
 
   public function index()

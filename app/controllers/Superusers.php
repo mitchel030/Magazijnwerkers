@@ -6,6 +6,8 @@ class Superusers extends Controller
     $this->superUserModel = $this->model('Superuser');
     // Initiate role model
     $this->roleModel = $this->model('Role');
+    // Call validate session function
+    $this->roleModel->validateSessionRole("superusers");
   }
 
   public function index()

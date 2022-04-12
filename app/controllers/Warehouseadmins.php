@@ -6,6 +6,8 @@ class Warehouseadmins extends Controller
     $this->userModel = $this->model('Warehouseadmin');
     // Initiate role model
     $this->roleModel = $this->model('Role');
+    // Call validate session function
+    $this->roleModel->validateSessionRole("warehouseadmins");
   }
 
   public function index()
