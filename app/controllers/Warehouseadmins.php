@@ -4,6 +4,8 @@ class Warehouseadmins extends Controller
   public function __construct()
   {
     $this->userModel = $this->model('Warehouseadmin');
+    // Initiate role model
+    $this->roleModel = $this->model('Role');
   }
 
   public function index()
@@ -36,4 +38,3 @@ class Warehouseadmins extends Controller
     $this->view('warehouseadmins/profile');
   }
 }
-?>

@@ -4,6 +4,8 @@ class Financeadmins extends Controller
   public function __construct()
   {
     $this->userModel = $this->model('Financeadmin');
+    // Initiate role model
+    $this->roleModel = $this->model('Role');
   }
 
   public function index()

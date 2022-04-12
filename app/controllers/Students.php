@@ -4,6 +4,8 @@ class Students extends Controller
   public function __construct()
   {
     $this->userModel = $this->model('Student');
+    // Initiate role model
+    $this->roleModel = $this->model('Role');
   }
 
   public function index()
@@ -16,35 +18,29 @@ class Students extends Controller
     //Default value
     $data = null;
     // Check if POST is send
-    if (isset($_POST)) 
-      {
-        // Check if submit button is pressed
-        if (isset($_POST["submit"])) 
-        {
-          // Put post values into variables
-          $product = $_POST["inputProduct"];
-          $amount = $_POST["inputAmount"];
-          $reason = $_POST["inputReason"];
+    if (isset($_POST)) {
+      // Check if submit button is pressed
+      if (isset($_POST["submit"])) {
+        // Put post values into variables
+        $product = $_POST["inputProduct"];
+        $amount = $_POST["inputAmount"];
+        $reason = $_POST["inputReason"];
 
-          //Check if variables are not empty
-          if (!empty($product) && !empty($amount) && !empty($reason)) 
-          {
-            //Initiate requestArticle function
-            $message = $this->userModel->requestArticle($product, $amount, $reason);
+        //Check if variables are not empty
+        if (!empty($product) && !empty($amount) && !empty($reason)) {
+          //Initiate requestArticle function
+          $message = $this->userModel->requestArticle($product, $amount, $reason);
 
-            if ($message = "success") {
-              //Gelukt
-              $data = "<h1>".$message."</h1>";
-            } else {
-              //Gefaald
-              $data = "<h1>".$message."</h1>";
-            }
-              
+          if ($message = "success") {
+            //Gelukt
+            $data = "<h1>" . $message . "</h1>";
+          } else {
+            //Gefaald
+            $data = "<h1>" . $message . "</h1>";
           }
         }
-        
-
-}
+      }
+    }
 
     $this->view('students/request', $data);
   }

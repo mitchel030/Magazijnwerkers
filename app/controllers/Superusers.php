@@ -4,6 +4,8 @@ class Superusers extends Controller
   public function __construct()
   {
     $this->superUserModel = $this->model('Superuser');
+    // Initiate role model
+    $this->roleModel = $this->model('Role');
   }
 
   public function index()
