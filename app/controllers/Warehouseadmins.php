@@ -34,12 +34,13 @@ class Warehouseadmins extends Controller {
 		]);
 	}
 
+	//Redirects to create.php
 	public function create()
 	{
-		$data['title'] = 'Halaman create';
 		$this->view('warehouseadmins/create');
 	}
 
+	//Stores the information in database through warehouseModel
 	public function store()
 	{
 		$name  = $_POST['name'];
@@ -51,12 +52,14 @@ class Warehouseadmins extends Controller {
 		$this->redirect('warehouseadmins');
 	}
 
+	//Redirects to edit.php with the data from the corresponding ID
 	public function edit()
 	{
 		$data = $this->warehouseModel->edit();
 		$this->view('warehouseadmins/edit', $data);
 	}
 
+	//Updates the information in database through warehouseModel
 	public function update($id)
 	{
 		$name  = $_POST['name'];
@@ -65,10 +68,11 @@ class Warehouseadmins extends Controller {
 		$available = $_POST['available'];
 
 		$this->warehouseModel->update($id, $name, $total, $outstanding, $available);
-
+		//Redirect to warehouseadmins view
 		$this->redirect('warehouseadmins');
 	}
 
+	//Delete through warehouseModel and redirect to warehouseadmins view
 	public function destroy()
 	{
 		$this->warehouseModel->destroy();
