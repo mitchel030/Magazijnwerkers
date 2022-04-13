@@ -26,7 +26,7 @@ class Financeadmins extends Controller
       $rows .= "<tr>";
       $rows .= "<th scope='row'>" . $a->id . "</th>";
       $rows .= "<td>" . $a->name . "</td>";
-      $rows .= "<td>" . $a->total . "</td>";
+      $rows .= "<td>" . $a->amount . "</td>";
       $rows .= "<td>" . $a->individualprice . "</td>";
       $rows .= "<td>" . $a->totalprice . "</td>";
       $rows .= "</tr>";
