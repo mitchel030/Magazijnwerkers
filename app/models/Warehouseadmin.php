@@ -1,7 +1,7 @@
 <?php
 class Warehouseadmin
 {
-    private $db;
+  private $db;
 	private $table = 'assortment';
 
 	public function __construct()
@@ -9,7 +9,8 @@ class Warehouseadmin
 		$this->db = new Database;
 	}
 
-	public function getAll()
+	// Create select statement and return all results in an array
+	public function getAssortment()
 	{
 		$this->db->query("SELECT * FROM {$this->table}");
 		return $this->db->resultSet();
@@ -27,8 +28,9 @@ class Warehouseadmin
 		return $this->db->execute();
 	}
 
-	public function edit($id)
+	public function edit()
 	{
+		$id = $_GET["id"];
 		$this->db->query("SELECT * FROM {$this->table} WHERE id = {$id}");
 		return $this->db->single();
 	}
@@ -45,8 +47,9 @@ class Warehouseadmin
 		return $this->db->execute();
 	}
 
-	public function destroy($id)
+	public function destroy()
 	{
+		$id = $_GET["id"];
 		$this->db->query("DELETE FROM {$this->table} WHERE id = {$id}");
 		return $this->db->execute();
 	}

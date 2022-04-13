@@ -1,5 +1,5 @@
 <!-- // Require head include -->
-<?php require_once APPROOT . '\views\includes\head.php'; ?>
+<?php require_once APPROOT . '\views\includes\head.php';?>
 <div class="container-fluid">
    <div class="row">
       <div class="col-2 p-0">
@@ -7,10 +7,9 @@
          <?php require_once APPROOT . '\views\warehouseadmins\sidebar.php'; ?>
       </div>
       <!-- Page Content -->
-      <div class="container">
-         <h1 class="text-center">Index</h1>
+      <div class="col-10">
          <div class="jumbotron mt-4">
-            <h1 class="display-4"><?= $data['judul']; ?></h1>
+            <h1 class="display-4">Assortment</h1>
             <a href="<?= URLROOT ?>/warehouseadmins/create" class="btn btn-sm btn-primary">
             Create
             </a>
@@ -23,25 +22,12 @@
                         <th scope="col">Total</th>
                         <th scope="col">Outstanding</th>
                         <th scope="col">Available</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
                      </tr> 
                   </thead>
                   <tbody>
-                     <?php foreach ($data['warehouseadmins'] as $key => $value): ?>
-                     <tr>
-                        <th scope="row"><?= ++$key; ?></th>
-                        <td><?= $value['name']; ?></td>
-                        <td><?= $value['total']; ?></td>
-                        <td><?= $value['outstanding']; ?></td>
-                        <td><?= $value['available']; ?></td>
-                        <td>
-                           <a href="<?= URLROOT; ?>/warehouseadmins/edit/<?= $value['id']; ?>" class="btn btn-xs btn-info">Edit</a>
-                           <form action="<?= URLROOT; ?>/warehouseadmins/destroy/<?= $value['id'] ?>" method="post">
-                              <button class="btn btn-xs btn-danger">Delete</button>
-                           </form>
-                        </td>
-                     </tr>
-                     <?php endforeach; ?>
+                     <?php echo $data["assortment"]; ?>
                   </tbody>
                </table>
             </div>
