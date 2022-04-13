@@ -211,19 +211,27 @@ div.side-menu > ul > li > a {
 /* Damiën's CSS */
 
 /* The Modal (background) */
-div.modalBtn {
+button.modalBtn {
+  right: 0;
+background-color: #00aef0;
+color: rgb(255, 255, 255);
+border: 1px solid #ffffff; /* Black */
+font-weight: 700;
+}
+
+button.modalBtn  {
   transition-duration: 0.4s;
 }
 
-div.modalBtn:hover {
-  background-color: #00aef0; /* Green */
-  color: white;
+button.modalBtn:hover {
+  background-color: #ffffff; /* MBOutrecht blue */
+  color: #000000;
+  border: 1px solid #000000; /* Black */
 }
 
 
-
 .editModal {
-  display: none;
+  display: block;
   position: fixed; /* Stay in place */
   z-index: 6; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -311,8 +319,8 @@ font-weight: 700;
     .Profile-Picture {
       position: absolute; 
       top: 0;
-      right: 20%;
-      margin: 10px;
+      right: 10%;
+      margin: 10px; 
       size: 25px; 
     }
     .profile-pic {

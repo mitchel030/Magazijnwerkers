@@ -43,4 +43,24 @@ class Student
         return "Failed";
     }
   }
+
+  public function Personalinfo($gender, $firstName, $lastName, $nickName, $birthday) {
+
+
+  //SQL Statement
+  $sql = "SELECT    `id` 
+                    `firstName`, 
+                    `lastName`, 
+                    `Birthday`,  
+                    `gender`, 
+                    `nickName` 
+          FROM      `personalinfo` 
+          WHERE 1";
+
+  // Prepare sql statement
+  $this->db->query($sql);
+
+ 
 }
+}
+?>

@@ -13,10 +13,9 @@ require_once APPROOT . '\views\includes\head.php';
 
 
         <div class="content col-10">
-            <button id="editBtn" class="modalBtn" >Open Modal</button>
-
+            <br>
             <!-- The Modal -->
-            <div id="editModal" class="editModal ">
+            <div id="editModal" class="editModal hidden ">
 
                 <!-- Modal content -->
                 <div class="modal-content">
@@ -84,11 +83,13 @@ require_once APPROOT . '\views\includes\head.php';
             </div>
             <div class="editOverlay hidden"></div>
 
-            <h1>Your profile</h1>
+           
             <div class="card mt-3">
 
                 <div class="card-body P-background">
-                    <h2>Personal information</h2>
+                    <h3>Personal information</h3>
+                    
+
                     <!-- Trigger/Open The Modal -->
 
                     <p class="card-text">
@@ -106,34 +107,44 @@ require_once APPROOT . '\views\includes\head.php';
                         </div>
 
                         <div class="row">
-                            <div class="mb-3 col-8">
+                            
+                            <div class="row">
+                            <div class="mb-3 col-6">
                                 <label for="staticfirstName" class="col-sm-2 col-form-label">First name</label>
                                 <div class="">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticfirstName" value="Example">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticfirstName" value="<?=[`firstName`] ?>">
                                 </div>
                             </div>
-                            <div class="row">
-
-                            </div>
-                            <div class="mb-3 col-8">
+                            <div class="mb-3 col-5">
                                 <label for="staticlastName" class="col-sm-2 col-form-label">Last name</label>
                                 <div class="">
                                     <input type="text" readonly class="form-control-plaintext" id="staticlastName" value="Example">
                                 </div>
                             </div>
-                            <div class="mb-3 col-8">
-                                <label for="staticDate" class="col-sm-2 col-form-label">Date of birth</label>
+                            </div>
+                            <div class="row">
+                            <div class="mb-3 col-6">
+                                <label for="staticDate" class="col-sm-2 col-form-label">Birthday</label>
                                 <div class="">
                                     <input type="text" readonly class="form-control-plaintext" id="staticDate" value="01-01-2001">
                                 </div>
                             </div>
-                            <div class="mb-3 col-8">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                            <div class="mb-3 col-5">
+                                <label for="staticgender" class="col-sm-2 col-form-label">Gender</label>
                                 <div class="">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticgender" value="male">
                                 </div>
-
                             </div>
+                            </div>
+                            <div class="row">
+                            <div class="mb-3 col-12">
+                                <label for="staticnickname" class="col-sm-2 col-form-label">Nick name</label>
+                                <div class="">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticnickName" value="Example">
+                                </div>
+                            </div>
+                            </div>
+                            
                         </div>
                     </div>
                     </p>
@@ -143,7 +154,7 @@ require_once APPROOT . '\views\includes\head.php';
             <!-- Contact information form -->
             <div class="card">
                 <div class="card-body P-background">
-                    <h2>Contact information</h2>
+                    <h3>Contact information</h3>
                     <p class="card-text">
 
                     <div class="row">
@@ -166,12 +177,22 @@ require_once APPROOT . '\views\includes\head.php';
                                 <input type="text" readonly class="form-control-plaintext" id="staticAdres" value="Streetname">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-7">
                         <label for="staticPhone" class="col-sm-2 col-form-label">Phone number</label>
-                        <div class="col-sm-10">
+                        <div class="">
                             <input type="text" readonly class="form-control-plaintext" id="staticPhone" value="0610101010">
                         </div>
+                        </div>
+                        <div class="mb-3 col-5">
+                                <label for="staticemail" class="col-sm-2 col-form-label">Email</label>
+                                <div class="">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticemail" value="dafdsgfd@fgdsgrf.nl">
+                                </div>
+                            </div>
                     </div>
                     </p>
+                    <button id="editBtn" class="modalBtn" >Open Modal</button>
                 </div>
             </div>
 
