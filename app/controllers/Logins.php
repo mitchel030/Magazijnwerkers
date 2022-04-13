@@ -31,6 +31,19 @@ class Logins extends Controller
         }
       }
     }
+
+    // Check if $_GET is send
+    if (isset($_GET)) {
+      // Check if get variable "message" is set
+      if (isset($_GET["message"])) {
+        // Return message string based on get variable "message"
+        switch ($_GET["message"]) {
+          case "no-permissions":
+            $loginMessage = "<div class='login--message alert alert-danger' role='alert'>You do not have permission to visit this page. <br>Please log in first.</div>";
+            break;
+        }
+      }
+    }
     $this->view('index', $loginData = [
       "loginMessage" => $loginMessage
     ]);

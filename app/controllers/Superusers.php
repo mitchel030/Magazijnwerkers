@@ -4,6 +4,10 @@ class Superusers extends Controller
   public function __construct()
   {
     $this->superUserModel = $this->model('Superuser');
+    // Initiate role model
+    $this->roleModel = $this->model('Role');
+    // Call validate session function
+    $this->roleModel->validateSessionRole("superusers");
   }
 
   public function index()
@@ -14,11 +18,11 @@ class Superusers extends Controller
     $userRows = "";
     foreach ($allUsers as $au) {
       $userRows .= "<tr>";
-      $userRows .= "<th scope='row'>" . $au->idusers . "</th>";
-      $userRows .= "<td>" . $au->username . "</td>";
-      $userRows .= "<td>" . $au->password . "</td>";
-      $userRows .= "<td>" . $au->mail . "</td>";
-      $userRows .= "<td>" . $au->permissions . "</td>";
+      $userRows .= "<th scope='row'>" . $au->LoginId . "</th>";
+      $userRows .= "<td>" . $au->Username . "</td>";
+      $userRows .= "<td>" . $au->Email . "</td>";
+      $userRows .= "<td>" . $au->Password . "</td>";
+      $userRows .= "<td>" . $au->Salt . "</td>";
       $userRows .= "</tr>";
     }
 
@@ -41,7 +45,6 @@ class Superusers extends Controller
         $um = "<div class='" . $userMessage["css"] . "' role='alert'>" . $userMessage["message"] . " <span>Click to dismiss</span> </div>";
 
         unset($_POST);
-
       }
     }
 
