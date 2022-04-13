@@ -1,8 +1,7 @@
 <!-- // Require head include -->
 <?php
 require_once APPROOT . '\views\includes\head.php';
-$user = $data["userData"];
-// var_dump($user);
+
 ?>
 
 <div class="container-fluid">
@@ -15,14 +14,16 @@ $user = $data["userData"];
 
 
         <div class="content col-10">
-            <br>
+           
+
             <!-- The Modal -->
-            <div id="editModal" class="editModal hidden ">
+            <div id="editModal" class="editModal ">
 
                 <!-- Modal content -->
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <form class="form-editPersonalInfo">
+                    
                         <div class="row">
                             <div class="col-6 edit">
                                 <label for="firstNamevalue">Change firstname</label>
@@ -33,7 +34,7 @@ $user = $data["userData"];
                                 <input type="lastName" class="form-control" id="lastNamevalue" value="Lastname">
                             </div>
                         </div>
-
+                        <button id="editBtn" class="modalBtn" >Open Modal</button>
                         <br>
                         <div class="row">
                             <div class="col-12 edit">
@@ -49,33 +50,33 @@ $user = $data["userData"];
                                 <small id="emailHelp" class="form-text ">Don't forget to use your new Email while logging in next time</small>
                             </div>
                         </div>
-                        <br>
+                    <br>
                         <div class="row">
                             <div class="col-4 edit">
                                 <label for="Zipcodevalue">Change zipcode</label>
                                 <input type="Zipcode" class="form-control" id="Zipcodevalue" value="Zipcode">
                             </div>
+                        
+                        <br>
 
-                            <br>
-
-                            <div class="col-8 edit">
-                                <label for="houseNumbervalue">Change house number</label>
-                                <input type="houseNumber" class="form-control" id="houseNumbervalue" value="houseNumber">
+                        <div class="col-8 edit">
+                            <label for="houseNumbervalue">Change house number</label>
+                            <input type="houseNumber" class="form-control" id="houseNumbervalue" value="houseNumber">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-12 edit">
-                                <label for="streetNamevalue">Change street name</label>
-                                <input type="streetName" class="form-control" id="streetNamevalue" value="streetName">
-                            </div>
+                        <label for="streetNamevalue">Change street name</label>
+                        <input type="streetName" class="form-control" id="streetNamevalue" value="streetName">
+                        </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-12 edit">
-                                <label for="phoneNumbervalue">Change phone number</label>
-                                <input type="phoneNumber" class="form-control" id="phoneNumbervalue" value="phoneNumber">
-                            </div>
+                        <label for="phoneNumbervalue">Change phone number</label>
+                        <input type="phoneNumber" class="form-control" id="phoneNumbervalue" value="phoneNumber">
+                        </div>
                         </div>
                         <br>
                         <button type="submit" class="modalBtn">Confirm changes</button>
@@ -85,13 +86,11 @@ $user = $data["userData"];
             </div>
             <div class="editOverlay hidden"></div>
 
-
+            <br>
             <div class="card mt-3">
 
                 <div class="card-body P-background">
                     <h3>Personal information</h3>
-
-
                     <!-- Trigger/Open The Modal -->
 
                     <p class="card-text">
@@ -109,44 +108,34 @@ $user = $data["userData"];
                         </div>
 
                         <div class="row">
+                            <div class="mb-3 col-8">
+                                <label for="staticfirstName" class="col-sm-2 col-form-label">First name</label>
+                                <div class="">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticfirstName" value="Example">
+                                </div>
+                            </div>
+                            <div class="row">
 
-                            <div class="row">
-                                <div class="mb-3 col-6">
-                                    <label for="staticfirstName" class="col-sm-2 col-form-label">First name</label>
-                                    <div class="">
-                                        <input type="text" readonly class="form-control-plaintext" id="staticfirstName" value="<?= $user->FirstName ?>">
-                                    </div>
-                                </div>
-                                <div class="mb-3 col-5">
-                                    <label for="staticlastName" class="col-sm-2 col-form-label">Last name</label>
-                                    <div class="">
-                                        <input type="text" readonly class="form-control-plaintext" id="staticlastName" value="<?= $user->LastName ?>">
-                                    </div>
+                            </div>
+                            <div class="mb-3 col-8">
+                                <label for="staticlastName" class="col-sm-2 col-form-label">Last name</label>
+                                <div class="">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticlastName" value="Example">
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="mb-3 col-6">
-                                    <label for="staticDate" class="col-sm-2 col-form-label">Birthday</label>
-                                    <div class="">
-                                        <input type="text" readonly class="form-control-plaintext" id="staticDate" value="<?= $user->BirthDate ?>">
-                                    </div>
-                                </div>
-                                <div class="mb-3 col-5">
-                                    <label for="staticgender" class="col-sm-2 col-form-label">Gender</label>
-                                    <div class="">
-                                        <input type="text" readonly class="form-control-plaintext" id="staticgender" value="<?= $user->Gender ?>">
-                                    </div>
+                            <div class="mb-3 col-8">
+                                <label for="staticDate" class="col-sm-2 col-form-label">Date of birth</label>
+                                <div class="">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticDate" value="01-01-2001">
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="mb-3 col-12">
-                                    <label for="staticnickname" class="col-sm-2 col-form-label">Nick name</label>
-                                    <div class="">
-                                        <input type="text" readonly class="form-control-plaintext" id="staticnickName" value="<?= $user->NickName ?>">
-                                    </div>
+                            <div class="mb-3 col-8">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                                <div class="">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
                     </p>
@@ -179,24 +168,11 @@ $user = $data["userData"];
                                 <input type="text" readonly class="form-control-plaintext" id="staticAdres" value="Streetname">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-7">
-                                <label for="staticPhone" class="col-sm-2 col-form-label">Phone number</label>
-                                <div class="">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticPhone" value="0610101010">
-                                </div>
-                            </div>
-                            <div class="mb-3 col-5">
-                                <label for="staticemail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticemail" value="dafdsgfd@fgdsgrf.nl">
-                                </div>
-                            </div>
+                        <label for="staticPhone" class="col-sm-2 col-form-label">Phone number</label>
+                        <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticPhone" value="0610101010">
                         </div>
-                        </p>
-                        <button id="editBtn" class="modalBtn">Open Modal</button>
                     </div>
+                    </p>
                 </div>
-
-                <!-- // Require end include -->
-                <?php require_once APPROOT . '\views\includes\end.php'; ?>
+            </div>

@@ -5,10 +5,15 @@ class Students extends Controller
   {
     $this->userModel = $this->model('Student');
   }
+
   public function profile()
   {
-    $this->view('students/profile');
+    $userData = $this->userModel->personalInfo();
+    $this->view('students/profile', $data = [
+      'userData' => $userData
+    ]);
   }
+
   public function index()
   {
     $this->view('students/index');
