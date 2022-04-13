@@ -18,7 +18,7 @@ class Financeadmins extends Controller
 
   public function assortment()
   {
-    $assortment = $this->financeadminModal->getAssortment();
+    $assortment = $this->userModel->getAssortment();
 
     // Create HTML Row template for assortment view of finance-admin
     $rows = "";

@@ -8,7 +8,7 @@
     </div>
     <!-- Page Content -->
     <div class="content col-10">
-      <h1 class="text-center">Assortment</h1>
+      <h1 class="text-center">Assortment Finance</h1>
       <table class="table table-hover table-striped">
         <thead>
           <tr>
