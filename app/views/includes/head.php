@@ -1,3 +1,10 @@
+<?php
+// If there is no session, start a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+?>
+
 <!doctype html>
 <html lang="en">
 

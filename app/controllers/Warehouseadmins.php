@@ -4,6 +4,10 @@ class Warehouseadmins extends Controller
   public function __construct()
   {
     $this->userModel = $this->model('Warehouseadmin');
+    // Initiate role model
+    $this->roleModel = $this->model('Role');
+    // Call validate session function
+    $this->roleModel->validateSessionRole("warehouseadmins");
   }
 
   public function index()
@@ -36,4 +40,3 @@ class Warehouseadmins extends Controller
     $this->view('warehouseadmins/profile');
   }
 }
-?>

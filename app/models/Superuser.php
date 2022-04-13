@@ -11,7 +11,7 @@ class Superuser
   // Function to retrieve all users
   public function getAllUsers()
   {
-    $this->db->query("SELECT * FROM users");
+    $this->db->query("SELECT * FROM login");
 
     $result = $this->db->resultSet();
 
@@ -31,7 +31,8 @@ class Superuser
 
 
   // This function sanitizes the form data and creates an user in the database.
-  public function createUser($name, $email, $password, $role) {
+  public function createUser($name, $email, $password, $role)
+  {
     $n = filter_var($name, FILTER_SANITIZE_STRING);
     $e = filter_var($email, FILTER_SANITIZE_STRING);
     $p = filter_var($password, FILTER_SANITIZE_STRING);
