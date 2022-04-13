@@ -18,6 +18,22 @@ class Financeadmins extends Controller
 
   public function assortment()
   {
-    $this->view('Financeadmins/assortment');
+    $assortment = $this->financeadminModal->getAssortment();
+
+    // Create HTML Row template for assortment view of finance-admin
+    $rows = "";
+    foreach ($assortment as $a) {
+      $rows .= "<tr>";
+      $rows .= "<th scope='row'>" . $a->id . "</th>";
+      $rows .= "<td>" . $a->name . "</td>";
+      $rows .= "<td>" . $a->total . "</td>";
+      $rows .= "<td>" . $a->individualprice . "</td>";
+      $rows .= "<td>" . $a->totalprice . "</td>";
+      $rows .= "</tr>";
+    }
+
+    $assortmentRows = $rows;
+
+    $this->view('financeadmins/assortment', $assortmentRows);
   }
 }
