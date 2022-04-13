@@ -275,3 +275,158 @@ div.side-menu > ul > li > a {
   text-decoration: none;
   font-weight: 700;
 }
+/* Damiën's CSS */
+
+/* The Modal (background) */
+button.modalBtn {
+  right: 0;
+background-color: #00aef0;
+color: rgb(255, 255, 255);
+border: 1px solid #ffffff; /* Black */
+font-weight: 700;
+}
+
+button.modalBtn  {
+  transition-duration: 0.4s;
+}
+
+button.modalBtn:hover {
+  background-color: #ffffff; /* MBOutrecht blue */
+  color: #000000;
+  border: 1px solid #000000; /* Black */
+}
+
+
+.editModal {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 6; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  right: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #00aef0;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  
+}
+div.edit {
+  background-color: #00aef0;
+
+}
+#emailHelp{
+  color: rgb(205, 205, 205);
+}
+form.form-editPersonalInfo{
+  margin-top: 0px;
+  border-color: #00aef0;
+  color: white;
+  font-weight: 700;
+}
+
+div.edit>input{
+  background-color: #00aef0;
+  color: white;
+  font-weight: 700;
+}
+
+/* The Close Button */
+.close {
+  color: #fffefe;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+div.Profile-btn {
+position: absolute; 
+top: 0;
+right: 0;
+margin: 10px;
+size: 25px; 
+;
+}
+div.Profile-btn > a {
+  color: #00AEF0;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+div.P-background{
+  background-color: #00aef0;
+color: white;
+font-weight: 700;
+}
+div>input.form-control-plaintext{
+  color: white;
+font-weight: 700;
+}
+/* profile picture */
+    .Profile-Picture {
+      position: absolute; 
+      top: 0;
+      right: 10%;
+      margin: 10px; 
+      size: 25px; 
+    }
+    .profile-pic {
+      width: 200px;
+      max-height: 200px;
+      display: inline-block;
+    }
+
+    .file-upload {
+      display: none;
+    }
+    .circle {
+      border-radius: 100% !important;
+      overflow: hidden;
+      width: 128px;
+      height: 128px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      position: absolute;
+      top: 72px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .p-image {
+    position: absolute;
+    top: 160px;
+    left: 100px;
+    color: #666666;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    }
+    .p-image:hover {
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    }
+    .upload-button {
+    font-size: 1.2em;
+    }
+
+    .upload-button:hover {
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    color: #999;
+    }

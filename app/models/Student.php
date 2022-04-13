@@ -43,4 +43,29 @@ class Student
         return "Failed";
     }
   }
+
+  // Function personalInfo retrieves data from table Person based on email address in table Login
+  public function personalInfo() {
+    $email = "student@test.nl";
+
+  //SQL Statement
+  $sql = "SELECT `LOG`.Email, `PER`.* FROM `login` as `LOG`
+          -- Inner join table personlogin ON LoginId
+          INNER JOIN `personlogin` as `PL`
+          ON `PL`.LoginId = `LOG`.LoginId
+          -- Inner join table person ON PersonId
+          INNER JOIN `person` as `PER`
+          ON `PER`.PersonId = `PL`.PersonId
+          -- Select based on email
+          WHERE `LOG`.Email = '$email';
+          ";
+
+  // Prepare sql statement
+  $this->db->query($sql);
+  // Returns 1 data row
+  $data = $this->db->single();
+  // Return data
+  return $data;
 }
+}
+?>

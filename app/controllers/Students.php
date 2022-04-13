@@ -10,6 +10,14 @@ class Students extends Controller
     $this->roleModel->validateSessionRole("students");
   }
 
+  public function profile()
+  {
+    $userData = $this->userModel->personalInfo();
+    $this->view('students/profile', $data = [
+      'userData' => $userData
+    ]);
+  }
+
   public function index()
   {
     $this->view('students/index');
