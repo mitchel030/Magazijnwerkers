@@ -105,4 +105,38 @@ class Superuser
       ];
     }
   }
+  public function requestArticle($product, $amount) {
+    $p = $product;
+    $a = $amount;
+
+
+    //SQL Statement
+    $sql = "INSERT INTO `requestsuperuser`
+                            (`id`,
+                             `Article`,
+                             `Amount`) 
+                            VALUES
+                            (NULL, 
+                            '$p', 
+                            '$a');";
+
+
+    // Prepare sql statement
+    $this->db->query($sql);
+
+    // Execute sql statement
+    $this->db->execute();
+
+    // Check if query is executed (1 row made)
+    if ($this->db->rowCount() === 1)
+    {
+        // This happens if query is executed successfully
+        return [ "message" => "Reqeust has been placed successfully!",
+                 "css" => "superuser--order alert alert-success" ]; 
+    } else {
+        // This happens if query fails
+        return  ["message" => "Reqeust has not been placed. Please try again later.",
+                 "css" => "superuser--order alert alert-danger" ];
+    }
+  }
 }
