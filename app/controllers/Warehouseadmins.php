@@ -57,7 +57,17 @@ class Warehouseadmins extends Controller {
 	{
 		$data = $this->warehouseModel->edit();
 		$this->view('warehouseadmins/edit', $data);
+
 	}
+
+		//Delete through warehouseModel and redirect to warehouseadmins view
+		public function destroy()
+		{
+			$this->warehouseModel->destroy();
+	
+			$this->redirect('warehouseadmins');
+		}
+	
 
 	//Updates the information in database through warehouseModel
 	public function update($id)
@@ -72,12 +82,7 @@ class Warehouseadmins extends Controller {
 		$this->redirect('warehouseadmins');
 	}
 
-
-	//Delete through warehouseModel and redirect to warehouseadmins view
-	public function destroy()
-	{
-		$this->warehouseModel->destroy();
-
-		$this->redirect('warehouseadmins');
-	}
 }
+
+
+
