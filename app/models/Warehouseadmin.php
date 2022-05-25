@@ -13,7 +13,13 @@ class Warehouseadmin
 	// Create select statement and return all results in an array
 	public function getAssortment()
 	{
-		$this->db->query("SELECT * FROM {$this->table}");
+		$this->db->query("SELECT * FROM {$this->table} WHERE lend = 0");
+		return $this->db->resultSet();
+	}
+
+	public function getLended()
+	{
+		$this->db->query("SELECT * FROM {$this->table} WHERE lend = 1");
 		return $this->db->resultSet();
 	}
 
@@ -45,8 +51,8 @@ class Warehouseadmin
 
 		$this->db->bind(':name', $name);
 		$this->db->bind(':total', $total);
-    $this->db->bind(':outstanding', $outstanding);
-    $this->db->bind(':available', $available);
+		$this->db->bind(':outstanding', $outstanding);
+		$this->db->bind(':available', $available);
 
 		return $this->db->execute();
 	}
@@ -56,6 +62,42 @@ class Warehouseadmin
 	{
 		$id = $_GET["id"];
 		$this->db->query("DELETE FROM {$this->table} WHERE id = {$id}");
+		return $this->db->execute();
+	}
+
+	//Selects array from where id = ${id}
+	public function lend()
+	{
+		$id = $_GET["id"];
+		$this->db->query("SELECT * FROM {$this->table} WHERE id = {$id}");
+		return $this->db->single();
+	}
+
+	public function lending($id, $name, $total, $outstanding, $available, $lend, $lendamount, $lenddescription)
+	{
+		$this->db->query("
+						UPDATE 
+							{$this->table}
+						SET 
+							name = :name, 
+							total = :total, 
+							outstanding = :outstanding, 
+							available = :available, 
+							lend = :lend, 
+							lendamount = :lendamount, 
+							lenddescription = :lenddescription 
+						WHERE 
+							id = {$id}	
+		");
+
+		$this->db->bind(':name', $name);
+		$this->db->bind(':total', $total);
+		$this->db->bind(':outstanding', $outstanding);
+		$this->db->bind(':available', $available);
+		$this->db->bind(':lend', $lend);
+		$this->db->bind(':lendamount', $lendamount);
+    	$this->db->bind(':lenddescription', $lenddescription);
+
 		return $this->db->execute();
 	}
 }
