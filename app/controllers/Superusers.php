@@ -86,7 +86,33 @@ class Superusers extends Controller
 
   public function request()
   {
-    $this->view('superusers/request');
+    //Default value
+    $data = null;
+    // Check if POST is send
+    if (isset($_POST)) {
+      // Check if submit button is pressed
+      if (isset($_POST["submit"])) {
+        // Put post values into variables
+        $product = $_POST["inputProduct"];
+        $amount = $_POST["inputAmount"];
+
+        //Check if variables are not empty
+        if (!empty($product) && !empty($amount)) {
+          //Initiate requestArticle function
+          $message = $this->superUserModel->requestArticle($product, $amount);
+
+          if ($message = "success") {
+            //Gelukt
+            $data = "<h1>" . $message . "</h1>";
+          } else {
+            //Gefaald
+            $data = "<h1>" . $message . "</h1>";
+          }
+        }
+      }
+    }
+
+    $this->view('superusers/request', $data);
   }
 
   // Initiate getAssortment() function in model 'superuser' and send data with view.

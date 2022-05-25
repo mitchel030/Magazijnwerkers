@@ -1,5 +1,4 @@
 <?php require_once APPROOT . '\views\includes\head.php'; ?>
-<div class="container">
 	<div class="jumbotron">
 		<form action="<?= URLROOT ?>/warehouseadmins/store" method="post">
 		  <div class="form-group">
@@ -21,4 +20,4 @@
 		  <button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 	</div>
-</div>
+</div> 
