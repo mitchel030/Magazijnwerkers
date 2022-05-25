@@ -72,8 +72,8 @@ class Warehouseadmins extends Controller {
 		$this->redirect('warehouseadmins');
 	}
 
+
 	//Delete through warehouseModel and redirect to warehouseadmins view
-	
 	public function destroy()
 	{
 		$this->warehouseModel->destroy();
