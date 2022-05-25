@@ -105,4 +105,9 @@ class Superuser
       ];
     }
   }
+
+  // Function to approve or decline request orders.
+  public function approve()
+  {
+  }
 }

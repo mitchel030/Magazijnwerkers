@@ -79,8 +79,11 @@ class Superusers extends Controller
     $this->view('superusers/order', $orderMessage);
   }
 
+  // View Approve page
   public function approve()
   {
+    
+
     $this->view('superusers/approve');
   }
 
