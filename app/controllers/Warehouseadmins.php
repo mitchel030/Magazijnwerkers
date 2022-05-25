@@ -20,17 +20,49 @@ class Warehouseadmins extends Controller {
 			$assortmentRows .= "<td>".$a->total."</td>";
 			$assortmentRows .= "<td>".$a->outstanding."</td>";
 			$assortmentRows .= "<td>".$a->available."</td>";
+			$assortmentRows .= "<td>".$a->lend."</td>";
+			$assortmentRows .= "<td>".$a->lendamount."</td>";
+			$assortmentRows .= "<td>".$a->lenddescription."</td>";
 			$assortmentRows .= "<td>
-														<a class='btn btn-xs btn-info' href=/warehouseadmins/edit?id=$a->id>Edit
-													</td>";
+									<a class='btn btn-xs btn-info' href=/warehouseadmins/edit?id=$a->id>Edit
+								</td>";
 			$assortmentRows .= "<td>
-														<a class='btn btn-xs btn-info' href=/warehouseadmins/destroy?id=$a->id>Delete
-													</td>";
+									<a class='btn btn-xs btn-info' href=/warehouseadmins/destroy?id=$a->id>Delete
+								</td>";
+			$assortmentRows .= "<td>
+									<a class='btn btn-xs btn-info' href=/warehouseadmins/lend?id=$a->id>Lend
+								</td>";
 			$assortmentRows .= "</tr>";
 		}
 
+		$lend = $this->warehouseModel->getLended();
+		
+		// Create HTML Rows using assortment data
+		$lendedRows = "";
+		foreach ($lend as $l) {
+			$lendedRows .= "<tr>";
+			$lendedRows .= "<th scope='row'>".$l->id."</th>";
+			$lendedRows .= "<td>".$l->name."</td>";
+			$lendedRows .= "<td>".$l->total."</td>";
+			$lendedRows .= "<td>".$l->outstanding."</td>";
+			$lendedRows .= "<td>".$l->available."</td>";
+			$lendedRows .= "<td>".$l->lend."</td>";
+			$lendedRows .= "<td>".$l->lendamount."</td>";
+			$lendedRows .= "<td>".$l->lenddescription."</td>";
+			$lendedRows .= "<td>
+									<a class='btn btn-xs btn-info' href=/warehouseadmins/edit?id=$l->id>Edit
+								</td>";
+			$lendedRows .= "<td>
+									<a class='btn btn-xs btn-info' href=/warehouseadmins/destroy?id=$l->id>Delete
+								</td>";
+			$lendedRows .= "<td>
+									<a class='btn btn-xs btn-info' href=/warehouseadmins/lend?id=$l->id>Lend
+								</td>";
+			$lendedRows .= "</tr>";
+		}
+
 		$this->view('warehouseadmins/index', $indexData = [
-			"assortment" => $assortmentRows
+			"assortment" => $assortmentRows, "lended" =>$lendedRows
 		]);
 	}
 
@@ -77,6 +109,26 @@ class Warehouseadmins extends Controller {
 	{
 		$this->warehouseModel->destroy();
 
+		$this->redirect('warehouseadmins');
+	}
+
+	public function lend()
+	{
+		$data = $this->warehouseModel->lend();
+		$this->view('warehouseadmins/lend', $data);
+	}
+
+	public function lending($id)
+	{
+		$name  = $_POST['name'];
+		$total = $_POST['total'];
+		$outstanding = $_POST['outstanding'];
+		$available = $_POST['available'];
+		$lend  = $_POST['lend'];
+		$lendamount = $_POST['lendamount'];
+		$lenddescription = $_POST['lenddescription'];
+		$this->warehouseModel->lending($id, $name, $total, $outstanding, $available, $lend, $lendamount, $lenddescription);
+		//Redirect to warehouseadmins view
 		$this->redirect('warehouseadmins');
 	}
 }
