@@ -1,3 +1,4 @@
+<?php require_once APPROOT . '\views\includes\head.php'; ?>
 <div class="container">
 	<div class="jumbotron">
 		<form action="<?= URLROOT ?>/warehouseadmins/store" method="post">
